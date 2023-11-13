@@ -1,31 +1,59 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+Battleships
+(x) Here is the live version of the Battleships project
 
-Welcome USER_NAME,
+How to play
+Battleship is a two-player game in which each player secretly places their ships, selectable from 5 to 10 ships, on a up to 10x10 grid and takes turns attacking their opponent's grid. Players mark hits with "X" and misses with "O". The first player to sink all of their opponent's ships wins the game.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+Features
 
-## Reminders
+* Existing Features
+* Random board generation
+* The Battleships are randomly placed on both player and computer gameboard
+* The player cannot see where the computers Battleships is placed
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+(x) Placeholder Game
 
-## Creating the Heroku app
+* Play againts the computer
+* Accepts user inputs
+* Maintains scores
+* Adjustable gameboard
+* Selectable amount of total battleships
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+(x) Placeholder Gane Scoreboard
 
-1. `heroku/python`
-2. `heroku/nodejs`
+Future Features
+* Manual place the Battleship on the gameboard
+  
+Data Model
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+Testing
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+Bugs
 
-Connect your GitHub repository and deploy as normal.
+Solved Bugs
 
-## Constraints
+Remaining Bugs
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+Validator Testing
+PEP8
+No errors were returned from PEP8online.com
 
------
-Happy coding!
+Deployment
+The Battleship project was deployed with Code Institute's mock terminal for Heroku
+
+Steps for deployment
+
+Fork or clone this respository
+
+Create a new Heroku app
+
+Set the buildbacks to Python and NodeJS in that order
+
+Link the Herokus app to the repository
+
+Click on Deploy
+
+Credits
+Credits are given to the Code Institute projects in Python
+
+
