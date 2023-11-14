@@ -1,3 +1,6 @@
+# Credit: Code is based on inspiration from Code Institute and several other collected sources. 
+# To create a working a game logic in this game most of the code had to be modified.
+
 import random
 
 MESSAGE_LENGTH = 80
@@ -9,7 +12,10 @@ class Board:
         self.ships_remaining = 0
 
     def place_ship(self, ship_length, orientation):
-        while True:
+        attempts = 0
+        max_attempts = 100  # Set a maximum number of attempts to avoid an infinite loop
+
+        while attempts < max_attempts:
             start_row = random.randint(0, self.size - 1)
             start_col = random.randint(0, self.size - 1)
 
@@ -21,6 +27,11 @@ class Board:
                         self.cells[start_row + i][start_col] = '#'
                 self.ships_remaining += 1
                 break
+
+            attempts += 1
+
+        if attempts == max_attempts:
+            raise RuntimeError("Failed to place the ship after the maximum number of attempts. Please check the board size and ship placement logic.")
 
     def check_valid_ship_placement(self, row, col, orientation, ship_length):
         for i in range(ship_length):
@@ -70,6 +81,16 @@ def display_board(player_board, computer_board, player_hits, player_misses, play
         for guess in computer_guesses:
             print(guess)
 
+def get_user_input(prompt, is_integer=False):
+    while True:
+        try:
+            user_input = input(prompt)
+            if is_integer:
+                return int(user_input)
+            return user_input
+        except ValueError:
+            print("Invalid input. Please enter a valid value.")
+
 def play_round(player_board, computer_board, board_size):
     player_hits = 0
     player_misses = 0
@@ -80,12 +101,8 @@ def play_round(player_board, computer_board, board_size):
     while True:
         display_board(player_board, computer_board, player_hits, player_misses, player_guesses, computer_guesses)
 
-        try:
-            player_row = int(input(f"{NAME}, enter row to attack 1 - {board_size}: ")) - 1
-            player_col = int(input(f"{NAME}, enter column to attack 1 - {board_size}: ")) - 1
-        except ValueError:
-            player_guesses.add(f"{NAME} guessed ({player_row + 1}, {player_col + 1}) and that was an Invalid Attack!")
-            continue
+        player_row = get_user_input(f"{NAME}, enter row to attack 1 - {board_size}: ", is_integer=True) - 1
+        player_col = get_user_input(f"{NAME}, enter column to attack 1 - {board_size}: ", is_integer=True) - 1
 
         if not (0 <= player_row < board_size and 0 <= player_col < board_size):
             player_guesses.add(f"{NAME} guessed ({player_row + 1}, {player_col + 1}) and that was an Invalid Attack!")
@@ -140,13 +157,13 @@ if __name__ == "__main__":
     print("Select how many battleships you would like of maximum 10 different")
     print("-" * MESSAGE_LENGTH)
 
-    NAME = input("Please enter your name: ")
-    board_size = int(input("Enter board size (5-10): "))
+    NAME = get_user_input("Please enter your name: ")
+    board_size = get_user_input("Enter board size (5-10): ", is_integer=True)
 
     player_board = Board(board_size)
     computer_board = Board(board_size)
 
-    num_ships = int(input("Enter number of ships (1-10): "))
+    num_ships = get_user_input("Enter the number of ships (1-10): ", is_integer=True)
     for _ in range(num_ships):
         player_board.place_ship(random.randint(2, 4), random.choice(['H', 'V']))
         computer_board.place_ship(random.randint(2, 4), random.choice(['H', 'V']))
