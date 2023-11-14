@@ -3,6 +3,9 @@
 
 ### (x) Here is the live version of the
 # Battleships project
+https://github.com/OV00VO/p3battleships
+
+https://github.com/OV00VO/p3battleships.git
 
 
 How to play Battleship is a two-player game in which each player secretly places their ships, selectable from 5 to 10 ships, on a up to 10x10 grid and takes turns attacking their opponent's grid. Players mark hits with "X" and misses with "O". The first player to sink all of their opponent's ships wins the game.
