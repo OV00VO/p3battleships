@@ -1,5 +1,5 @@
 # Credits and References mentioned below and in README.md.
-# Credit given to Code Institute course material.
+# Credit given to Code Institute course curriculum and material.
 # In most cases, the code is modified for the game itself.
 
 import random
@@ -11,7 +11,7 @@ class Board:
     def __init__(self, size):
         self.size = size
         self.cells = [['_' for _ in range(size)] for _ in range(size)]
-        self.ships_remaining = 0  # Corrected variable name
+        self.ships_remaining = 0
 
 # Reference/Credit:
 # https://www.geeksforgeeks.org/python-programming-examples/
@@ -76,7 +76,7 @@ class Board:
 
         if self.cells[row][col] == '#':
             self.cells[row][col] = 'O'
-            self.ships_remaining -= 1  # Corrected variable name
+            self.ships_remaining -= 1
             return True
         elif self.cells[row][col] == '_':
             self.cells[row][col] = 'X'
@@ -197,10 +197,6 @@ def play_round(player_board, computer_board, board_size, player, computer):
             f"{player} guessed ({player_row + 1}, {player_col + 1}) "
             f"and that was a "
         )
-        if computer_board.attack(player_row, player_col):
-            player_guess_text += "Hit!"
-        else:
-            player_guess_text += "Miss."
 
         if player_board.attack(player_row, player_col):
             player_hit += 1
@@ -208,7 +204,7 @@ def play_round(player_board, computer_board, board_size, player, computer):
             player_score += 1
         else:
             player_miss += 1
-            player_guess.append(player_guess_text + "Miss.")
+            player_guess.append(player_guess_text + "Miss!")
 
             if not computer_board.has_remaining_ships():
                 display_board(
