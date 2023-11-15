@@ -151,7 +151,23 @@ The game allows customization of board size and ship number, and it concludes wi
 * **In-Game Tutorials** - Provides tutorials or hints to guide new players in understanding rules and strategies.
 * **Cross-Platform Expansion** - Expands the game to other platforms, including mobile devices or online gaming platforms.
 * **Manual Battleship Placement** - Allows players to manually place Battleships on the gameboard.
-  
+
+# Data Model - Board Class
+
+When creating a game such as this Battleship game, the Board class serves as the cornerstone, shaping the game's structure and data flow. This class, instantiated for both players and the computer, orchestrates crucial aspects of gameplay. The Board class provides a robust, organized, and scalable framework for managing player actions, ship positions, and game progression.
+
+## Core Features
+* Board Size and Configuration - Manages grid size and ship placement for a customizable gaming experience.
+* Guess Tracking - Records player guesses, crucial for hit and miss determination.
+* Player and Board Identification - Identifies player and computer boards, ensuring a personalized gaming environment.
+* Gameplay Facilitation Methods - Includes `print_board` for visual representation and `add_ships` for strategic ship placement.
+
+## Advantages of the Board Class
+* Modularity and Extensibility - Facilitates easy feature additions without disrupting core logic.
+* Readability and Organization - Enhances code readability and organization by centralizing board-related operations.
+* Scalability and Customization - Adaptable to varied game complexities and user preferences.
+* Encapsulation of Game State - Maintains clean data management, minimizing conflicts and ensuring game integrity.
+
 # Testing
 
 ## Manual Testing Steps
@@ -241,7 +257,7 @@ The game allows customization of board size and ship number, and it concludes wi
 There are still som UX and UI bugs that could be fixed for a better game experience. Based on presets for the deployment the Code Institute Template for deployment was not adjusted to the gameplan itself. This project was based on not using other import of libraries that the standard Python Random library, no other libraries or similar was used in the project. By using different libraries for instance the Graphic library the game could be improved further.
 
 ### Validator Testing PEP8
-(0) errors were returned from PEP8online.com at final check.
+(0) errors were returned from [PEP8 Validator fron Code Institute](https://pep8ci.herokuapp.com/) at final check.
 
 ![p3battleship_PEP8](https://github.com/OV00VO/p3battleships/assets/136384344/f79d4e54-c396-4410-be7e-459e5675cb44)
 
