@@ -47,7 +47,7 @@ class Board:
                         self.cells[start_row][start_col + i] = '#'
                     else:
                         self.cells[start_row + i][start_col] = '#'
-                self.ships_remaining += 1  # Corrected variable name
+                self.ships_remaining += 1
                 break
 
             attempts += 1
@@ -232,7 +232,7 @@ def play_round(player_board, computer_board, board_size, player, computer):
                 computer_guess_tuple[0], computer_guess_tuple[1]) else "Miss!"
             computer_guess.append(
                 f"{computer} guessed ({computer_guess_tuple[0] + 1}, "
-                f"{computer_guess_tuple[1] + 1}) a {hit_or_miss}")
+                f"{computer_guess_tuple[1] + 1}) and it was a {hit_or_miss}")
 
         if not player_board.has_remaining_ships():
             display_board(player, player_board, computer, computer_board,
