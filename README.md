@@ -2,7 +2,7 @@
 
 ### [Here is the live version of the Battleship Game on Heroku](https://p3battleships-bf6b19640af6.herokuapp.com/)
 
-### [Here is a link to the Battleship Game - Github Repository](https://github.com/OV00VO/p3battleship)
+### [Here is a link to the Battleship Game - Github Repository](https://github.com/OV00VO/p3battleships)
 
 # Battleship Game
 
