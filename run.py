@@ -195,7 +195,7 @@ def play_round(player_board, computer_board, board_size, player, computer):
 
         player_guess_text = (
             f"{player} guessed ({player_row + 1}, {player_col + 1}) "
-            f"and that was a "
+            f"that was a "
         )
 
         if player_board.attack(player_row, player_col):
@@ -232,7 +232,7 @@ def play_round(player_board, computer_board, board_size, player, computer):
                 computer_guess_tuple[0], computer_guess_tuple[1]) else "Miss!"
             computer_guess.append(
                 f"{computer} guessed ({computer_guess_tuple[0] + 1}, "
-                f"{computer_guess_tuple[1] + 1}) and it was a {hit_or_miss}")
+                f"{computer_guess_tuple[1] + 1}) that was a {hit_or_miss}")
 
         if not player_board.has_remaining_ships():
             display_board(player, player_board, computer, computer_board,
